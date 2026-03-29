@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chivas NFC</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #0A0A0A, #1a0000);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: linear-gradient(145deg, #C8102E, #002F6C);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 25px rgba(200,16,46,0.8);
+}
+
+.player-img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 15px;
+}
+
+.player-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.player-number {
+    font-size: 50px;
+    color: #fff;
+}
+
+.btn {
+    display: block;
+    margin: 10px auto;
+    padding: 15px;
+    width: 90%;
+    max-width: 400px;
+    background: #C8102E;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #a50d25;
+    transform: scale(1.03);
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+        margin: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <img id="imagen" class="player-img" src="">
+        <div id="nombre" class="player-name"></div>
+        <div id="numero" class="player-number"></div>
+        <p>🔥 100% Chivas 🔴⚪</p>
+    </div>
+
+    <!-- BOTONES PRINCIPALES -->
+    <a class="btn" href="https://www.chivasdecorazon.com.mx/" target="_blank">
+        🌐 Sitio Oficial
+    </a>
+
+    <a class="btn" href="https://www.youtube.com/@chivas" target="_blank">
+        ▶️ YouTube Oficial
+    </a>
+
+    <a class="btn" href="https://www.instagram.com/chivas/" target="_blank">
+        📸 Instagram Oficial
+    </a>
+
+    <a class="btn" href="https://www.chivasdecorazon.com.mx/es/calendario" target="_blank">
+        📅 Próximo Partido
+    </a>
+
+    <a class="btn" href="https://www.chivasdecorazon.com.mx/es/calendario" target="_blank">
+        🗓️ Calendario de Partidos
+    </a>
+
+    <a class="btn" href="https://ligamx.net/" target="_blank">
+        📊 Tabla Liga MX
+    </a>
+
+    <a class="btn" href="https://www.concacaf.com/" target="_blank">
+        🌎 Otros Torneos
+    </a>
+
+    <!-- NUEVOS BOTONES -->
+    <a class="btn" href="https://es.wikipedia.org/wiki/Cl%C3%A1sico_Nacional_(M%C3%A9xico)" target="_blank">
+        🔥 Clásico vs América
+    </a>
+
+    <a class="btn" href="https://es.wikipedia.org/wiki/Cl%C3%A1sico_Tapat%C3%ADo" target="_blank">
+        ⚔️ Clásico Tapatío
+    </a>
+
+    <a class="btn" href="https://tiendachivas.com.mx/" target="_blank">
+        🛒 Tienda Oficial
+    </a>
+
+</div>
+
+<script>
+const jugadores = {
+    vega: {
+        nombre: "Alexis Vega",
+        numero: "10",
+        imagen: "vega.jpg"
+    },
+    pulido: {
+        nombre: "Alan Pulido",
+        numero: "9",
+        imagen: "pulido.jpg"
+    }
+};
+
+const params = new URLSearchParams(window.location.search);
+const jugador = params.get("jugador");
+
+if (jugadores[jugador]) {
+    document.getElementById("nombre").innerText = jugadores[jugador].nombre;
+    document.getElementById("numero").innerText = jugadores[jugador].numero;
+    document.getElementById("imagen").src = jugadores[jugador].imagen;
+} else {
+    document.getElementById("nombre").innerText = "Chivas";
+    document.getElementById("numero").innerText = "🔥";
+}
+</script>
+
+</body>
+</html>
