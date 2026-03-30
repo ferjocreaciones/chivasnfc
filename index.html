@@ -316,30 +316,37 @@ const jugadores = {
         posicion: "DEL",
         imagen: "agonzalez.jpg",
         premiumLinks: [
-        "https://www.google.com/search?q=armando+gonzalez+chivas+jugador+perfil+estadisticas",
-        "https://www.google.com/search?q=armando+gonzalez+goles+chivas"
+            "https://www.google.com/search?q=armando+gonzalez+chivas+jugador+perfil+estadisticas",
+            "https://www.google.com/search?q=armando+gonzalez+goles+chivas"
         ]
     },
     pulido: {
         nombre: "Alan Pulido",
         numero: "9",
         posicion: "DEL",
-        imagen: "pulido.jpg"
+        imagen: "pulido.jpg",
+        premiumLinks: [
+            "https://www.google.com/search?q=alan+pulido+chivas+perfil",
+            "https://www.google.com/search?q=alan+pulido+goles"
+        ]
     }
 };
-
-    // BOTONES PREMIUM DINÁMICOS
-    document.getElementById("btn-premium-1").href = jugadores[jugador].premiumLinks[0];
-    document.getElementById("btn-premium-2").href = jugadores[jugador].premiumLinks[1];
 
 const params = new URLSearchParams(window.location.search);
 const jugador = params.get("jugador");
 
 if (jugadores[jugador]) {
+
+    // DATOS DE TARJETA
     document.getElementById("player-name").innerText = jugadores[jugador].nombre;
     document.getElementById("player-number").innerText = jugadores[jugador].numero;
     document.getElementById("player-position").innerText = jugadores[jugador].posicion;
     document.getElementById("player-img").src = jugadores[jugador].imagen;
+
+    // 🔥 BOTONES PREMIUM (AQUÍ VA, NO ANTES)
+    document.getElementById("btn-premium-1").href = jugadores[jugador].premiumLinks[0];
+    document.getElementById("btn-premium-2").href = jugadores[jugador].premiumLinks[1];
+
 } else {
     document.getElementById("player-name").innerText = "Chivas";
     document.getElementById("player-number").innerText = "🔥";
