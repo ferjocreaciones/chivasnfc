@@ -252,6 +252,10 @@ body {
             🎥 Todos los goles Campeón de Goleo AP25
         </a>
 
+         <a id="btn-premium-3" class="btn-premium" target="_blank">
+            🎥 Perfil Armando Gónzalez
+        </a>
+
     </div>
    
     <div class="separador"></div>
@@ -328,6 +332,7 @@ const jugadores = {
         premiumLinks: [
             "https://www.google.com/search?q=alan+pulido+chivas+perfil",
             "https://www.google.com/search?q=alan+pulido+goles"
+            "https://www.google.com/search?q=armando+gonzalez+chivas+jugador+perfil+estadisticas"
         ]
     }
 };
@@ -346,6 +351,7 @@ if (jugadores[jugador]) {
     // 🔥 BOTONES PREMIUM (AQUÍ VA, NO ANTES)
     document.getElementById("btn-premium-1").href = jugadores[jugador].premiumLinks[0];
     document.getElementById("btn-premium-2").href = jugadores[jugador].premiumLinks[1];
+    document.getElementById("btn-premium-3").href = jugadores[jugador].premiumLinks[2];
 
 } else {
     document.getElementById("player-name").innerText = "Chivas";
