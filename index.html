@@ -242,14 +242,18 @@ body {
 </div>
 
     <!-- BOTONES PRINCIPALES -->
-     <a href="https://www.instagram.com/hormiga_glez/?hl=es" target="_blank" class="btn-premium">
-    ⭐ Instagrama Armando González
-    </a>
+    <div id="premium-container">
 
-    <a href="https://www.google.com/search?q=armando+gonzalez+chivas+jugador+perfil+estadisticas" target="_blank" class="btn-premium">
-    ⭐ Información Perfil Armando González
-    </a>
+        <a id="btn-premium-1" class="btn-premium" target="_blank">
+            ⭐ Perfil Premium
+        </a>
+    
+        <a id="btn-premium-2" class="btn-premium" target="_blank">
+            🎥 Mejores Jugadas
+        </a>
 
+    </div>
+   
     <div class="separador"></div>
     
     <a class="btn" href="https://www.chivasdecorazon.com.mx/" target="_blank">
@@ -310,7 +314,11 @@ const jugadores = {
         nombre: "Armando González",
         numero: "34",
         posicion: "DEL",
-        imagen: "agonzalez.jpg"
+        imagen: "agonzalez.jpg",
+        premiumLinks: [
+        "https://www.google.com/search?q=armando+gonzalez+chivas+jugador+perfil+estadisticas",
+        "https://www.google.com/search?q=armando+gonzalez+goles+chivas"
+        ]
     },
     pulido: {
         nombre: "Alan Pulido",
@@ -319,6 +327,10 @@ const jugadores = {
         imagen: "pulido.jpg"
     }
 };
+
+    // BOTONES PREMIUM DINÁMICOS
+    document.getElementById("btn-premium-1").href = jugadores[jugador].premiumLinks[0];
+    document.getElementById("btn-premium-2").href = jugadores[jugador].premiumLinks[1];
 
 const params = new URLSearchParams(window.location.search);
 const jugador = params.get("jugador");
