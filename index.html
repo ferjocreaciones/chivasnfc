@@ -63,6 +63,69 @@ body {
     transform: scale(1.03);
 }
 
+.btn-premium {
+    display: block;
+    width: 90%;
+    max-width: 320px;
+    margin: 25px auto;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #111;
+    text-decoration: none;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+
+    /* Fondo dorado */
+    background: linear-gradient(
+        135deg,
+        #FFD700,
+        #FFC300,
+        #FFB300,
+        #FFD700
+    );
+
+    /* Sombra */
+    box-shadow:
+        0 0 15px rgba(255, 215, 0, 0.6),
+        0 0 30px rgba(255, 215, 0, 0.4);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* EFECTO HOVER */
+.btn-premium:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 25px rgba(255, 215, 0, 0.9),
+        0 0 50px rgba(255, 215, 0, 0.6);
+}
+
+/* BRILLO ANIMADO */
+.btn-premium::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.4);
+    transform: skewX(-20deg);
+    animation: brillo 3s infinite;
+}
+
+/* ANIMACIÓN */
+@keyframes brillo {
+    0% {
+        left: -75%;
+    }
+    100% {
+        left: 125%;
+    }
+}
+
 .separador {
     width: 100%;
     height: 8px;
@@ -179,6 +242,10 @@ body {
 </div>
 
     <!-- BOTONES PRINCIPALES -->
+     <a href="https://www.google.com/search?q=armando+gonzalez+chivas+jugador+perfil+estadisticas" target="_blank" class="btn-premium">
+    ⭐ Perfil Premium del Jugador
+    </a>
+    
     <a class="btn" href="https://www.chivasdecorazon.com.mx/" target="_blank">
         🌐 Sitio Oficial
     </a>
